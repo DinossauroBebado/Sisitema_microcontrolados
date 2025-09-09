@@ -11,6 +11,7 @@ void setup()
 {
 
     pinMode(LCD_E, OUTPUT);
+    digitalWrite(LCD_E, HIGH); pinMode(LCD_E, OUTPUT);
     digitalWrite(LCD_E, HIGH);
     // Configura todos os pinos como saída
     for (int i = 0; i < num_leds; i++)
