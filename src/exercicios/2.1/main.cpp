@@ -7,10 +7,8 @@ int leds[] = {LED1, LED2, LED3, LED4, LED5, LED6, LED7, LED8};
 int num_leds = sizeof(leds) / sizeof(leds[0]);
 
 // Variável de contagem
-uint8_t contador = 200;
+uint8_t contador = 0;
 void mostrarBinario(uint8_t valor);
-void acenderTodos();
-void apagarTodos();
 
 void setup()
 {
@@ -38,7 +36,6 @@ void loop()
     // Se chegou no limite (255), reinicia
     if (contador == 255)
     {
-        Serial.println(".");
         // Pisca todos os LEDs 3 vezes
         for (int i = 0; i < 4; i++)
         {

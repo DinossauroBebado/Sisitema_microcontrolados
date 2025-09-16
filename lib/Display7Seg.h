@@ -1,6 +1,8 @@
 #ifndef DISPLAY7SEG_H
 #define DISPLAY7SEG_H
 
+// dev by Guilherme Pires @utfpr
+//  8.10.25
 #include <Arduino.h>
 
 // Classe para controle de display de 7 segmentos com 2 dígitos

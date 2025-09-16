@@ -1,6 +1,7 @@
 // Inclui a biblioteca padrão para displays de cristal líquido
 #include <LiquidCrystal.h>
-
+#include "../include/config.h"
+#include <Arduino.h>
 // ===================================================================================
 // CONFIGURAÇÃO DOS PINOS
 // Mapeie aqui os pinos do ESP32 que você conectou ao LCD.
@@ -25,23 +26,23 @@ unsigned long contador = 0;
 // ===================================================================================
 void setup()
 {
-  // Inicializa o display com 16 colunas e 2 linhas
-  lcd.begin(16, 2);
+    // Inicializa o display com 16 colunas e 2 linhas
+    lcd.begin(16, 2);
 
-  // Limpa qualquer texto que possa ter ficado no display
-  lcd.clear();
+    // Limpa qualquer texto que possa ter ficado no display
+    lcd.clear();
 
-  // Posiciona o cursor na coluna 3, linha 0 (primeira linha)
-  lcd.setCursor(3, 0);
-  // Escreve o texto
-  lcd.print("ESP32 com");
+    // Posiciona o cursor na coluna 3, linha 0 (primeira linha)
+    lcd.setCursor(3, 0);
+    // Escreve o texto
+    lcd.print("ESP32 com");
 
-  // Posiciona o cursor na coluna 1, linha 1 (segunda linha)
-  lcd.setCursor(1, 1);
-  lcd.print("LCD Paralelo!");
+    // Posiciona o cursor na coluna 1, linha 1 (segunda linha)
+    lcd.setCursor(1, 1);
+    lcd.print("LCD Paralelo!");
 
-  // Aguarda 3 segundos para a mensagem de boas-vindas ser lida
-  delay(3000);
+    // Aguarda 3 segundos para a mensagem de boas-vindas ser lida
+    delay(3000);
 }
 
 // ===================================================================================
@@ -49,21 +50,21 @@ void setup()
 // ===================================================================================
 void loop()
 {
-  // Limpa a tela
-  lcd.clear();
+    // Limpa a tela
+    lcd.clear();
 
-  // Posiciona o cursor na primeira linha
-  lcd.setCursor(0, 0);
-  lcd.print("Tempo ativo:");
+    // Posiciona o cursor na primeira linha
+    lcd.setCursor(0, 0);
+    lcd.print("Tempo ativo:");
 
-  // Posiciona o cursor na segunda linha para mostrar o contador
-  lcd.setCursor(0, 1);
-  lcd.print(contador);
-  lcd.print(" segundos");
+    // Posiciona o cursor na segunda linha para mostrar o contador
+    lcd.setCursor(0, 1);
+    lcd.print(contador);
+    lcd.print(" segundos");
 
-  // Incrementa o contador
-  contador++;
+    // Incrementa o contador
+    contador++;
 
-  // Aguarda 1 segundo
-  delay(1000);
+    // Aguarda 1 segundo
+    delay(1000);
 }

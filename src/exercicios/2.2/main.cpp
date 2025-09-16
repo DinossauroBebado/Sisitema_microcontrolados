@@ -14,7 +14,6 @@ void setup()
     for (int i = 0; i < num_leds; i++)
     {
         pinMode(leds[i], OUTPUT);
-        // digitalWrite(leds[i], LOW); // Garante que todos comecem apagados
     }
 }
 
@@ -23,9 +22,8 @@ void loop()
     static int n = 0;
     display.showNumber(n);
 
-    // Atualiza multiplexação
     display.update();
-    delay(5); // tempo pequeno para multiplexar
+    delay(5);
 
     // Incrementa número a cada 2 segundos
     static unsigned long lastChange = 0;
@@ -35,8 +33,10 @@ void loop()
         if (n > 99)
         {
             n = 0;
+            // desliga display
             digitalWrite(SRV1, LOW);
             digitalWrite(SRV2, LOW);
+            // liga os leds
             digitalWrite(LCD_E, HIGH);
             for (int j = 0; j < 3; j++)
             {

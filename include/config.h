@@ -12,7 +12,7 @@
 #define LED3 14
 #define LED2 12
 #define LED1 13
-#define LED_BUILTIN 2
+// #define LED_BUILTIN 2
 /* upside UP
 #define SEG_A 15
 #define SEG_B 2
